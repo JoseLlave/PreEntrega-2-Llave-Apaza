@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- Titulo del documento -->
+    <title>Canciones</title>
+</head>
+<body>
+    <!-- Cabeza de pagina -->
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black">
+            <video autoplay loop muted playsinline class="background-video">
+                <source src="../video/Fondo-menu.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand me-auto" href="../index.html">
+                    <img src="../img/logo.png" alt="logo">
+                </a>
+                <!-- Contenido del offcanvas -->
+                <div class="offcanvas offcanvas-end custom-offcanvas" tabindex="-1" id="offcanvasNavbar">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title custom-offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <!-- Menú centrado -->
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 active custom-nav-link" aria-current="page" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-nav-link" href="canciones.html">Canciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-nav-link" href="playlists.html">Playlists</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-nav-link" href="noticias.html">Noticias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-nav-link" href="contacto.html">Contáctanos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Botones de sesión -->
+                <div class="d-flex">
+                    <button class="custom-login-button me-2">Login</button>
+                    <button class="custom-sign-button">Sign Up</button>
+                </div>
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler custom-navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Seccion de lista de resultado de busqueda de canciones -->
+         <section class="lista-canciones">
+            <ul>
+                <li>
+                    <h3>Don't look back in anger</h3>
+                    <h4>Oasis</h4>
+                    <img src="../img/cancionOasis.jpeg">
+                </li>
+                <li>
+                    <h3>I took pill in Ibiza</h3>
+                    <h4>Mike Posner</h4>
+                    <img src="../img/cancionMike.jpeg">
+                </li>
+            </ul>
+         </section>
+         <!-- Seccion de canciones mas escuchadas -->
+         <section class="mas-escuchados">
+            <h2>Los mas escuchados</h2>
+            <ul>
+                <li>
+                    <h3>iPad</h3>
+                    <h4>The Chainsmokers</h4>
+                    <img src="../img/ipadChainsmokers.jpeg">
+                </li>
+                <li>
+                    <h3>Play Hard</h3>
+                    <h4>David Guetta</h4>
+                    <img src="../img/playHard.webp">
+                </li>
+            </ul>
+         </section>
+         <!-- Seccion de favoritos -->
+         <section class="favoritos">
+            <h2>Tus Favoritos</h2>
+            <ol>
+                <li>Save your tears</li>
+                <li>21 Guns</li>
+            </ol>
+         </section>
+    </main>
+    <!-- Pie de pagina -->
+    <footer>
+        <p>Nosotros</p>
+        <p>Ayuda</p>
+        <p>Califícanos</p>
+        <p>Encuentranos en: Facebook | Twitter | Instagram</p>
+        <p>© 2024 Melo𝄞. Todos los derechos reservados. | Política de Privacidad | Términos y Condiciones</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
