@@ -430,24 +430,366 @@ h2 {
 
 
 /* Estilo de la pagina canciones */
-/* Estilo para la seccion de canciones */
-.lista-canciones{
-    text-align: left;
+
+/* Contenedor principal con Grid */
+.main-canciones {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Dos columnas: la primera más grande */
+    grid-template-rows: auto auto; /* Dos filas */
+    gap: 20px; /* Espacio entre secciones */
+    padding: 100px; /* Reducir el padding general */
 }
 
-.lista-canciones ul{
+/* Sección de lista de canciones */
+/* Sección de lista de canciones */
+.lista-canciones {
+    grid-column: 1 / 2; /* Ocupa la primera columna */
+    grid-row: 1 / 3; /* Ocupa ambas filas */
+    padding: 20px; /* Padding interno */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Añadir barra de desplazamiento vertical si es necesario */
+}
+
+.lista-canciones .busqueda {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.lista-canciones input {
+    width: 100%;
+    padding: 10px; /* Padding del input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.lista-canciones .icono-busqueda {
+    margin-left: 10px; /* Margen del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+.lista-canciones ul {
     list-style: none;
+    padding: 0;
 }
 
-/* Estilo para la seccion mas escuchados */
-.mas-escuchados ul{
+.lista-canciones li {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 20px; /* Espacio entre ítems */
+    padding-bottom: 20px; /* Espacio interno inferior */
+    border-bottom: 1px solid #eee; /* Línea divisoria */
+}
+
+/* Eliminar la línea divisora del último elemento */
+.lista-canciones li:last-child {
+    border-bottom: none;
+    margin-bottom: 0; /* Eliminar margen inferior del último elemento */
+    padding-bottom: 0; /* Eliminar padding inferior del último elemento */
+}
+
+.lista-canciones img {
+    width: 140px; /* Aumentado el tamaño de la imagen */
+    height: 140px; /* Asegurar que la imagen sea cuadrada */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-right: 20px; /* Margen derecho */
+    object-fit: cover; /* Asegurar que la imagen cubra todo el espacio */
+    flex-shrink: 0; /* Evitar que la imagen se reduzca */
+}
+
+.lista-canciones .info-cancion {
+    display: flex;
+    align-items: flex-start; /* Alinear al inicio */
+    flex: 1; /* Ocupar el espacio restante */
+    flex-direction: column; /* Asegurar alineación a la izquierda */
+}
+
+/* Datos principales */
+.datos-principales {
+    text-align: left; /* Alinear a la izquierda */
+}
+
+.datos-principales h3 {
+    margin: 0; /* Sin margen */
+    font-size: 22px; /* Texto más grande */
+    font-weight: bold; /* Negrita para el título */
+}
+
+.datos-principales h4 {
+    margin: 0; /* Sin margen */
+    font-size: 16px; /* Texto más grande */
+    color: #666;
+}
+
+.datos-principales .genero {
+    margin: 0; /* Sin margen */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    color: #888; /* Color gris para el género */
+    font-style: italic; /* Estilo cursiva */
+}
+
+/* Información adicional */
+.informacion-adicional {
+    margin-top: 10px; /* Espacio entre datos principales y adicionales */
+    text-align: left; /* Alinear información adicional a la izquierda */
+}
+
+.informacion-adicional p {
+    margin: 0; /* Sin margen */
+    font-size: 14px;
+    color: #888;
+}
+
+.informacion-adicional .calificacion {
+    color: #ffcc00; /* Color dorado para las estrellas */
+}
+
+.informacion-adicional .reproducciones,
+.informacion-adicional .lanzamiento {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Sección de los más escuchados */
+/* Sección de los más escuchados con efecto sutil */
+.mas-escuchados {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: rgba(255, 255, 255, 0.08); /* Transparente y elegante */
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+    overflow: hidden; /* Elimina las barras de desplazamiento */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Efecto de iluminación sutil */
+.mas-escuchados::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.4), rgba(255, 0, 255, 0.4));
+    background-size: 300% 300%;
+    animation: neon-smooth 5s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Animación más lenta y tenue */
+@keyframes neon-smooth {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Título centrado con color llamativo */
+.mas-escuchados h2 {
+    margin-top: 15px;
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff; /* Blanco puro */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Azul neón sutil */
+}
+
+/* Contenedor de la lista */
+.mas-escuchados ul {
+    padding: 0;
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Diseño de los elementos de la lista */
+.mas-escuchados li {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 480px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05); /* Más transparencia */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover para destacar */
+.mas-escuchados li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Ajuste del tamaño de las imágenes */
+.mas-escuchados img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin-right: 18px;
+    flex-shrink: 0; 
+}
+
+/* Contenedor de la información de la canción */
+.mas-escuchados .info-cancion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Título de la canción */
+.mas-escuchados .info-cancion h3 {
+    margin: 0;
+    font-size: 22px;
+    color: white;
+}
+
+/* Artista */
+.mas-escuchados .info-cancion h4 {
+    margin: 2px 0;
+    font-size: 18px;
+    color: #bbbbbb;
+}
+
+/* Género musical */
+.mas-escuchados .genero {
+    margin: 0;
+    font-size: 16px;
+    color: #00eaff; /* Azul neón */
+}
+
+/* Sección de favoritos con efecto elegante */
+.favoritos {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background: rgba(255, 255, 255, 0.05); /* Más transparente para diferenciar */
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.2); /* Neón morado-azul suave */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 2px solid rgba(138, 43, 226, 0.3); /* Bordes con neón violeta */
+}
+
+/* Centrar el título */
+.favoritos h2 {
+    margin-top: 15px;
+    font-size: 26px;
+    text-align: center;
+    color: #ddd;
+}
+
+.favoritos ul {
+    padding: 0;
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Lista de favoritos */
+.favoritos ol {
     list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Estilo para la seccion favoritos */
-.favoritos{
-    text-align: left;
+/* Elementos de la lista */
+.favoritos li {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    max-width: 450px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.25); /* Neón violeta más intenso */
+    transition: transform 0.2s ease-in-out;
 }
+
+.favoritos li:hover {
+    transform: scale(1.03);
+}
+
+/* Ajuste del tamaño de las imágenes */
+.favoritos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin-right: 18px;
+    flex-shrink: 0; 
+}
+
+/* Contenedor de la información de la canción */
+.favoritos .info-cancion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ccc;
+}
+
+/* Estilos de los textos */
+.favoritos .info-cancion h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.favoritos .info-cancion h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #bbb;
+}
+
+.favoritos .genero {
+    margin: 0;
+    font-size: 16px;
+    color: #999;
+}
+
+/* Fondo con efecto neón azul-violeta */
+.favoritos::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, rgba(138, 43, 226, 0.3), rgba(30, 144, 255, 0.3));
+    background-size: 300% 300%;
+    animation: neon-move 5s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Animación del fondo neón */
+@keyframes neon-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 /* Estilo de la pagina playlist*/
 /* Estilo para la seccion destacados */
