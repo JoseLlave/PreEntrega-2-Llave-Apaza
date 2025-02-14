@@ -30,7 +30,7 @@
 
         .carrusel-container {
             gap: 15px;
-            @include flexbox(row, flex-start, stretch, nowrap); // Usando mixin para flexbox
+            @include flexbox(row, flex-start, stretch, nowrap);
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scroll-padding: 0;
@@ -41,11 +41,11 @@
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: $color-scrollbar; // Usando variable de color
+                background-color: $color-scrollbar;
             }
 
             &::-webkit-scrollbar-track {
-                background-color: $color-scrollbar-track; // Usando variable de color
+                background-color: $color-scrollbar-track;
             }
         }
 
@@ -228,7 +228,7 @@
             .evento,
             .item-tecnologia,
             .item-premio {
-                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+                @include flexbox(column, flex-start, flex-start, nowrap);
             }
 
             .fecha,
@@ -283,15 +283,15 @@
     
                 .columna-izquierda {
                     h1 {
-                        font-size: 1.5em; // Ajusta el tamaño de la fuente para móviles
+                        font-size: 1.5em;
                     }
     
                     .descripcion-contacto {
-                        font-size: 0.9em; // Ajusta el tamaño de la fuente para móviles
+                        font-size: 0.9em;
                     }
     
                     .icono-decorativo {
-                        font-size: 1.5em; // Ajusta el tamaño del ícono para móviles
+                        font-size: 1.5em;
                     }
                 }
     

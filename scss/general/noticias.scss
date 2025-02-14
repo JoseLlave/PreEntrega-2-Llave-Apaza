@@ -20,7 +20,7 @@
         .titular {
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: $color-noticias; // Usando variable de color
+            color: $color-noticias;
         }
 
         .imagen-noticia {
@@ -28,13 +28,13 @@
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
-            @include borde-redondeado(10px); // Usando mixin para bordes redondeados
+            @include borde-redondeado(10px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .descripcion {
             font-size: 1.1em;
-            color: $color-descripcion; // Usando variable de color
+            color: $color-descripcion;
             line-height: 1.6;
             margin-top: 10px;
         }
@@ -44,7 +44,7 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
-        font-family: $fuente-principal; // Usando variable de fuente
+        font-family: $fuente-principal;
 
         h2 {
             font-size: 2.5em;
@@ -60,13 +60,13 @@
             padding: 0;
 
             .evento {
-                @include flexbox(row, flex-start, center); // Usando mixin para flexbox
+                @include flexbox(row, flex-start, center);
                 margin-bottom: 20px;
-                background-color: $color-evento; // Usando variable de color
+                background-color: $color-evento;
                 padding: 20px;
-                @include borde-redondeado(15px); // Usando mixin para bordes redondeados
+                @include borde-redondeado(15px);
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                @include transicion(transform, 0.3s, ease); // Usando mixin para transiciones
+                @include transicion(transform, 0.3s, ease);
 
                 &:hover {
                     transform: translateY(-5px);
@@ -74,7 +74,7 @@
                 }
 
                 .fecha {
-                    @include flexbox(row, center, center); // Usando mixin para flexbox
+                    @include flexbox(row, center, center);
                     margin-right: 20px;
 
                     .icono-calendario {
@@ -125,9 +125,9 @@
         max-width: 1000px;
         margin: 0 auto;
         padding: 20px;
-        font-family: $fuente-principal; // Usando variable de fuente
-        background-color: $color-tecnologia; // Usando variable de color
-        @include borde-redondeado(15px); // Usando mixin para bordes redondeados
+        font-family: $fuente-principal;
+        background-color: $color-tecnologia;
+        @include borde-redondeado(15px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
         h2 {
@@ -146,11 +146,11 @@
             .item-tecnologia {
                 @include flexbox(row, flex-start, center); // Usando mixin para flexbox
                 margin-bottom: 30px;
-                background-color: $color-formulario; // Usando variable de color
+                background-color: $color-formulario;
                 padding: 20px;
-                @include borde-redondeado(10px); // Usando mixin para bordes redondeados
+                @include borde-redondeado(10px);
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                @include transicion(transform, 0.3s, ease); // Usando mixin para transiciones
+                @include transicion(transform, 0.3s, ease);
 
                 &:hover {
                     transform: translateY(-5px);
@@ -161,7 +161,7 @@
                     width: 200px;
                     height: 150px;
                     object-fit: cover;
-                    @include borde-redondeado(10px); // Usando mixin para bordes redondeados
+                    @include borde-redondeado(10px);
                     margin-right: 20px;
                 }
 
@@ -189,9 +189,9 @@
         max-width: 1000px;
         margin: 0 auto;
         padding: 20px;
-        font-family: $fuente-principal; // Usando variable de fuente
-        background-color: $color-premio; // Usando variable de color
-        @include borde-redondeado(15px); // Usando mixin para bordes redondeados
+        font-family: $fuente-principal;
+        background-color: $color-premio;
+        @include borde-redondeado(15px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
         h2 {
@@ -208,12 +208,12 @@
             padding: 0;
 
             .item-premio {
-                background-color: $color-formulario; // Usando variable de color
+                background-color: $color-formulario;
                 padding: 20px;
-                @include borde-redondeado(10px); // Usando mixin para bordes redondeados
+                @include borde-redondeado(10px);
                 margin-bottom: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                @include transicion(transform, 0.3s, ease); // Usando mixin para transiciones
+                @include transicion(transform, 0.3s, ease);
 
                 &:hover {
                     transform: translateY(-5px);

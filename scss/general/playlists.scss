@@ -13,7 +13,7 @@
         margin-bottom: 20px;
 
         h2 {
-            font-family: $fuente-titulo; // Usando variable de fuente
+            font-family: $fuente-titulo;
             font-size: 3.5rem;
             font-weight: 700;
             color: #ccba69;
@@ -37,7 +37,7 @@
     }
 
     .playlist-carrusel-container {
-        @include carrusel; // Usando mixin para carrusel
+        @include carrusel;
         padding-bottom: 20px;
 
         &::-webkit-scrollbar {
@@ -45,22 +45,22 @@
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: $color-scrollbar; // Usando variable de color
+            background-color: $color-scrollbar;
             border-radius: 6px;
         }
 
         &::-webkit-scrollbar-track {
-            background-color: $color-scrollbar-track; // Usando variable de color
+            background-color: $color-scrollbar-track;
         }
     }
 
     .playlist-carrusel-item {
-        @include item-carrusel(600px, 400px, 2px solid white, 0 6px 12px rgba(0, 0, 0, 0.3)); // Usando mixin para elementos de carrusel
+        @include item-carrusel(600px, 400px, 2px solid white, 0 6px 12px rgba(0, 0, 0, 0.3));
         position: relative;
         background-size: cover;
         background-position: center;
-        @include flexbox(row, center, center); // Usando mixin para flexbox
-        font-family: $fuente-carrusel; // Usando variable de fuente
+        @include flexbox(row, center, center);
+        font-family: $fuente-carrusel;
         font-size: 5rem;
         color: white;
 
@@ -88,7 +88,7 @@
 
     button {
         margin-top: 20px;
-        @include boton(#cfb55fb0, white, none, 5px); // Usando mixin para botones
+        @include boton(#cfb55fb0, white, none, 5px);
         cursor: pointer;
 
         &:hover {
@@ -99,7 +99,7 @@
 
 .lista-playlists {
     h2 {
-        font-family: $fuente-titulo; // Usando variable de fuente
+        font-family: $fuente-titulo;
     }
 
     .lista-playlists-container {
@@ -114,11 +114,11 @@
         height: 220px;
         background-size: cover;
         background-position: center;
-        @include borde-redondeado(10px); // Usando mixin para bordes redondeados
-        @include flexbox(row, center, center); // Usando mixin para flexbox
+        @include borde-redondeado(10px);
+        @include flexbox(row, center, center);
         color: white;
         font-size: 1.3em;
-        font-family: $fuente-carrusel; // Usando variable de fuente
+        font-family: $fuente-carrusel;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
