@@ -1,0 +1,60 @@
+    // Colores
+    $color-bg: black; // Color de fondo principal
+    $color-texto: whitesmoke; // Color de texto principal
+    $color-titulo: #eec3c2; // Color para títulos
+    $color-enlace: #94959b; // Color para enlaces
+    $color-enlace-hover: #d6a152; // Color para enlaces al hacer hover
+    $color-boton-login: #d6a152; // Color de fondo para botón de login
+    $color-boton-login-hover: #d6a152ce; // Color de fondo para botón de login al hacer hover
+    $color-boton-sign: transparent; // Color de fondo para botón de registro
+    $color-boton-sign-hover: #d6a152; // Color de fondo para botón de registro al hacer hover
+    $color-boton-sign-texto: #d6a152; // Color de texto para botón de registro
+    $color-boton-sign-texto-hover: white; // Color de texto para botón de registro al hacer hover
+    $color-borde: white; // Color de borde
+    $color-sombra: rgba(0, 0, 0, 0.3); // Color de sombra
+    $color-scrollbar: rgba(255, 255, 255, 0.8); // Color de la barra de desplazamiento
+    $color-scrollbar-track: rgba(255, 255, 255, 0.1); // Color del track de la barra de desplazamiento
+    $color-noticias: #333; // Color para noticias
+    $color-descripcion: #666; // Color para descripciones
+    $color-evento: #1a1a1a; // Color de fondo para eventos
+    $color-tecnologia: #262626; // Color de fondo para tecnología
+    $color-premio: #262626; // Color de fondo para premios
+    $color-contacto: #1a1a1a; // Color de fondo para la página de contacto
+    $color-formulario: #262626; // Color de fondo para el formulario
+    $color-boton-enviar: #ff8c00; // Color de fondo para el botón de enviar
+    $color-boton-enviar-hover: #ff4500; // Color de fondo para el botón de enviar al hacer hover
+    $color-boton-reset: #444; // Color de fondo para el botón de reset
+    $color-boton-reset-hover: #666; // Color de fondo para el botón de reset al hacer hover
+
+    // Fuentes
+    $fuente-principal: 'Arial', sans-serif; // Fuente principal
+    $fuente-titulo: 'Nosifer', serif; // Fuente para títulos
+    $fuente-carrusel: 'Rubik Bubbles', serif; // Fuente para el carrusel
+
+    // Tamaños de fuente
+    $tamano-texto: 1rem; // Tamaño de texto base
+    $tamano-titulo: 2.5rem; // Tamaño de título
+    $tamano-subtitulo: 1.5rem; // Tamaño de subtítulo
+    $tamano-enlace: 1rem; // Tamaño de enlace
+    $tamano-boton: 1rem; // Tamaño de texto en botones
+    $tamano-carrusel: 5rem; // Tamaño de texto en el carrusel
+    $tamano-noticia: 1.1rem; // Tamaño de texto en noticias
+    $tamano-descripcion: 1rem; // Tamaño de texto en descripciones
+
+    // Espaciados
+    $espaciado-general: 20px; // Espaciado general
+    $espaciado-pequeno: 10px; // Espaciado pequeño
+    $espaciado-grande: 40px; // Espaciado grande
+
+    // Bordes
+    $borde-redondeado: 10px; // Radio de borde redondeado
+    $borde-fino: 1px solid $color-borde; // Borde fino
+    $borde-grueso: 2px solid $color-borde; // Borde grueso
+
+    // Sombras
+    $sombra-general: 0 4px 8px $color-sombra; // Sombra general
+    $sombra-hover: 0 8px 16px rgba(0, 0, 0, 0.4); // Sombra al hacer hover
+
+    // Animaciones
+    $duracion-animacion: 0.3s; // Duración de las animaciones
+    $animacion-ease: ease-in-out; // Tipo de animación

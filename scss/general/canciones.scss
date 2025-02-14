@@ -1,0 +1,311 @@
+// Importar variables y mixin
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+/* Estilo de la página canciones */
+.main-canciones {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: $espaciado-general;
+    padding: 100px;
+}
+
+/* Sección de lista de canciones */
+.lista-canciones {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    padding: $espaciado-general;
+    border-radius: $borde-redondeado;
+    box-shadow: $sombra-general;
+    overflow-y: auto;
+
+    .busqueda {
+        display: flex;
+        align-items: center;
+        margin-bottom: $espaciado-general;
+    }
+
+    input {
+        width: 100%;
+        padding: $espaciado-pequeno;
+        border: $borde-fino;
+        border-radius: 4px;
+        font-size: $tamano-texto;
+    }
+
+    .icono-busqueda {
+        margin-left: $espaciado-pequeno;
+        font-size: $tamano-subtitulo;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: $espaciado-general;
+        padding-bottom: $espaciado-general;
+        border-bottom: $borde-fino;
+
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    img {
+        width: 140px;
+        height: 140px;
+        border-radius: $borde-redondeado;
+        margin-right: $espaciado-general;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .info-cancion {
+        display: flex;
+        align-items: flex-start;
+        flex: 1;
+        flex-direction: column;
+    }
+}
+
+.datos-principales {
+    text-align: left;
+
+    h3 {
+        margin: 0;
+        font-size: 1.375rem; // 22px convertido a rem
+        font-weight: bold;
+    }
+
+    h4 {
+        margin: 0;
+        font-size: 1rem; // 16px convertido a rem
+        color: $color-descripcion;
+    }
+
+    .genero {
+        margin: 0;
+        font-size: 0.875rem; // 14px convertido a rem
+        color: #888;
+        font-style: italic;
+    }
+}
+
+.informacion-adicional {
+    margin-top: $espaciado-pequeno;
+    text-align: left;
+
+    p {
+        margin: 0;
+        font-size: 0.875rem; // 14px convertido a rem
+        color: #888;
+    }
+
+    .calificacion {
+        color: #ffcc00;
+    }
+
+    .reproducciones,
+    .lanzamiento {
+        font-size: 0.875rem; // 14px convertido a rem
+        color: #888;
+    }
+}
+
+.mas-escuchados {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    @include borde-redondeado(12px); // Usando mixin para bordes redondeados
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+    overflow: hidden;
+    @include flexbox(column, center, center); // Usando mixin para flexbox
+    position: relative;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        @include borde-redondeado(12px); // Usando mixin para bordes redondeados
+        background: linear-gradient(45deg, rgba(0, 255, 255, 0.4), rgba(255, 0, 255, 0.4));
+        background-size: 300% 300%;
+        @include animacion(neon-smooth, 5s, linear); // Usando mixin para animaciones
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    h2 {
+        margin-top: 15px;
+        font-size: 1.75rem; // 28px convertido a rem
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+
+    ul {
+        padding: 0;
+        margin-top: 40px;
+        width: 100%;
+        @include flexbox(column, center, center); // Usando mixin para flexbox
+    }
+
+    li {
+        @include flexbox(row, flex-start, center); // Usando mixin para flexbox
+        width: 90%;
+        max-width: 480px;
+        margin-bottom: 20px;
+        padding: 10px;
+        @include borde-redondeado(10px); // Usando mixin para bordes redondeados
+        background: rgba(255, 255, 255, 0.05);
+        @include transicion(transform, 0.2s, ease); // Usando mixin para transiciones
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        @include borde-redondeado(12px); // Usando mixin para bordes redondeados
+        margin-right: 18px;
+        flex-shrink: 0;
+    }
+
+    .info-cancion {
+        @include flexbox(column, flex-start, flex-start); // Usando mixin para flexbox
+
+        h3 {
+            margin: 0;
+            font-size: 1.375rem; // 22px convertido a rem
+            color: white;
+        }
+
+        h4 {
+            margin: 2px 0;
+            font-size: 1.125rem; // 18px convertido a rem
+            color: #bbbbbb;
+        }
+    }
+
+    .genero {
+        margin: 0;
+        font-size: 1rem; // 16px convertido a rem
+        color: #00eaff;
+    }
+}
+
+@keyframes neon-smooth {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.favoritos {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    @include borde-redondeado(12px); // Usando mixin para bordes redondeados
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.2);
+    overflow: hidden;
+    @include flexbox(column, center, center); // Usando mixin para flexbox
+    position: relative;
+    border: 2px solid rgba(138, 43, 226, 0.3);
+
+    h2 {
+        margin-top: 15px;
+        font-size: 1.625rem; // 26px convertido a rem
+        text-align: center;
+        color: #ddd;
+    }
+
+    ul, ol {
+        padding: 0;
+        margin-top: 40px;
+        width: 100%;
+        @include flexbox(column, center, center); // Usando mixin para flexbox
+    }
+
+    li {
+        @include flexbox(row, flex-start, center); // Usando mixin para flexbox
+        width: 85%;
+        max-width: 450px;
+        padding: 10px;
+        @include borde-redondeado(10px); // Usando mixin para bordes redondeados
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 10px rgba(138, 43, 226, 0.25);
+        @include transicion(transform, 0.2s, ease-in-out); // Usando mixin para transiciones
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        @include borde-redondeado(12px); // Usando mixin para bordes redondeados
+        margin-right: 18px;
+        flex-shrink: 0;
+    }
+
+    .info-cancion {
+        @include flexbox(column, flex-start, flex-start); // Usando mixin para flexbox
+        color: #ccc;
+
+        h3 {
+            margin: 0;
+            font-size: 1.25rem; // 20px convertido a rem
+            color: #fff;
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 1.125rem; // 18px convertido a rem
+            color: #bbb;
+        }
+    }
+
+    .genero {
+        margin: 0;
+        font-size: 1rem; // 16px convertido a rem
+        color: #999;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        @include borde-redondeado(12px); // Usando mixin para bordes redondeados
+        background: linear-gradient(45deg, rgba(138, 43, 226, 0.3), rgba(30, 144, 255, 0.3));
+        background-size: 300% 300%;
+        @include animacion(neon-move, 5s, linear); // Usando mixin para animaciones
+        z-index: -1;
+        opacity: 0.5;
+    }
+}
+
+@keyframes neon-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

@@ -1,0 +1,324 @@
+// Importar variables y mixin
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+@media screen and (max-width: 768px) {
+    /* Estilo para la pagina index */
+    .main-index {
+        display: block;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    /* Estilo para la seccion de carrusel */
+    .main-carrusel {
+        padding: 10px;
+        margin-bottom: 10px;
+        height: auto;
+        overflow: hidden;
+
+        .carrusel-titulo {
+            margin-top: 10px;
+            margin-bottom: 5px;
+
+            h2 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+                margin-bottom: 5px;
+            }
+        }
+
+        .carrusel-container {
+            gap: 15px;
+            @include flexbox(row, flex-start, stretch, nowrap); // Usando mixin para flexbox
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 0;
+            padding-bottom: 10px;
+
+            &::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $color-scrollbar; // Usando variable de color
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: $color-scrollbar-track; // Usando variable de color
+            }
+        }
+
+        .carrusel-item {
+            flex: 0 0 auto;
+            width: 80%;
+            height: 200px;
+            font-size: 1.5rem;
+            @include borde-redondeado(15px); // Usando mixin para bordes redondeados
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            @include transicion(transform box-shadow, 0.3s, ease); // Usando mixin para transiciones
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+
+    /* Estilo para la pagina playlists */
+    .playlist-destacados {
+        margin-top: 40px;
+        padding: 15px;
+
+        .playlist-carrusel-titulo h2 {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+
+        .playlist-carrusel-container {
+            gap: 15px;
+            scroll-padding: 0 calc(50% - 150px);
+        }
+
+        .playlist-carrusel-item {
+            width: 300px;
+            height: 200px;
+            font-size: 2rem;
+            @include borde-redondeado(10px); // Usando mixin para bordes redondeados
+            @include transicion(transform, 0.3s, ease); // Usando mixin para transiciones
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+        }
+    }
+
+    /* Estilo para lista de playlists */
+    .lista-playlists-container {
+        @include grid(repeat(2, 1fr), auto, 10px); // Usando mixin para grid
+        max-width: 90%;
+    }
+
+    .lista-playlists-item {
+        height: 150px;
+        font-size: 1em;
+        @include borde-redondeado(8px); // Usando mixin para bordes redondeados
+    }
+
+    .lista-playlists h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    /* Estilos para la pagina de canciones */
+    .main-canciones {
+        @include grid(1fr, auto auto auto, 0); // Usando mixin para grid
+        padding: 50px;
+
+        .lista-canciones {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+
+            li {
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .info-cancion {
+                width: 100%;
+            }
+        }
+
+        .mas-escuchados {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+
+            h2 {
+                font-size: 24px;
+            }
+
+            li {
+                width: 100%;
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .info-cancion {
+                width: 100%;
+            }
+        }
+
+        .favoritos {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+
+            h2 {
+                font-size: 24px;
+            }
+
+            li {
+                width: 100%;
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .info-cancion {
+                width: 100%;
+            }
+        }
+    }
+
+    /* Estilos para la pagina noticias */
+    .main-noticias {
+        @include grid(1fr, auto auto auto auto, 0); // Usando mixin para grid
+        padding: 10px;
+        margin-top: 50px;
+
+        .noticia {
+            padding: 10px;
+
+            .titular {
+                font-size: 2em;
+            }
+
+            .imagen-noticia {
+                width: 100%;
+            }
+
+            .descripcion {
+                font-size: 1em;
+            }
+        }
+
+        .eventos-festivales,
+        .tecnologia-musica,
+        .premios-reconocimientos {
+            padding: 15px;
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .evento,
+            .item-tecnologia,
+            .item-premio {
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            .fecha,
+            .imagen-tecnologia {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .icono-calendario {
+                font-size: 2em;
+            }
+
+            .mes {
+                font-size: 1em;
+            }
+
+            .numero-fecha {
+                font-size: 1.5em;
+            }
+
+            .nombre-evento,
+            .titulo-noticia {
+                font-size: 1.5em;
+            }
+
+            .artista,
+            .texto-noticia,
+            .descripcion-premio {
+                font-size: 1em;
+            }
+
+            .imagen-tecnologia {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+        /* Estilos para la pagina contactanos */
+        .main-contacto {
+            padding: 20px;
+            margin-top: 50px;
+    
+            .contenedor-contacto {
+                @include flexbox(column, flex-start, stretch, nowrap); // Usando mixin para flexbox
+                gap: 20px;
+    
+                .columna-izquierda,
+                .columna-derecha {
+                    padding: 20px;
+                }
+    
+                .columna-izquierda {
+                    h1 {
+                        font-size: 1.5em; // Ajusta el tamaño de la fuente para móviles
+                    }
+    
+                    .descripcion-contacto {
+                        font-size: 0.9em; // Ajusta el tamaño de la fuente para móviles
+                    }
+    
+                    .icono-decorativo {
+                        font-size: 1.5em; // Ajusta el tamaño del ícono para móviles
+                    }
+                }
+    
+                .formulario-contacto {
+                    .grupo-formulario {
+                        @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+    
+                        .icono-formulario {
+                            margin-bottom: 10px;
+                        }
+    
+                        input,
+                        textarea {
+                            width: 100%;
+                        }
+                    }
+    
+                    .grupo-botones {
+                        @include flexbox(column, flex-start, stretch, nowrap); // Usando mixin para flexbox
+                        gap: 10px;
+    
+                        .boton-enviar,
+                        .boton-reset {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+}

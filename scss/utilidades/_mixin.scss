@@ -1,0 +1,110 @@
+@use "sass:color";
+
+// Mixin para flexbox
+@mixin flexbox($direccion: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+// Mixin para grid
+@mixin grid($columnas: 1fr, $filas: auto, $gap: 0) {
+    display: grid;
+    grid-template-columns: $columnas;
+    grid-template-rows: $filas;
+    gap: $gap;
+}
+
+// Mixin para animaciones
+@mixin animacion($nombre, $duracion: $duracion-animacion, $tipo: $animacion-ease) {
+    animation: $nombre $duracion $tipo;
+}
+
+// Mixin para sombras
+@mixin sombra($sombra: $sombra-general) {
+    box-shadow: $sombra;
+}
+
+// Mixin para bordes redondeados
+@mixin borde-redondeado($radio: $borde-redondeado) {
+    border-radius: $radio;
+}
+
+// Mixin para transiciones
+@mixin transicion($propiedad: all, $duracion: $duracion-animacion, $tipo: $animacion-ease) {
+    transition: $propiedad $duracion $tipo;
+}
+
+// Mixin para botones
+@mixin boton($fondo, $color-texto, $borde: none, $radio: $borde-redondeado) {
+    background-color: $fondo;
+    color: $color-texto;
+    border: $borde;
+    border-radius: $radio;
+    padding: $espaciado-pequeno $espaciado-general;
+    font-size: $tamano-boton;
+    cursor: pointer;
+    @include transicion;
+
+    &:hover {
+        background-color: color.adjust($fondo, $lightness: -10%);
+    }
+}
+
+// Mixin para enlaces
+@mixin enlace($color: $color-enlace, $color-hover: $color-enlace-hover) {
+    color: $color;
+    text-decoration: none;
+    @include transicion;
+
+    &:hover {
+        color: $color-hover;
+    }
+}
+
+// Mixin para carruseles
+@mixin carrusel($ancho: 100%, $alto: auto, $gap: 30px) {
+    display: flex;
+    gap: $gap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding: 0 calc(50% - 300px);
+    width: $ancho;
+    height: $alto;
+    align-items: center;
+}
+
+// Mixin para elementos de carrusel
+@mixin item-carrusel($ancho: 600px, $alto: 500px, $borde: $borde-grueso, $sombra: $sombra-general) {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: $ancho;
+    height: $alto;
+    border: $borde;
+    border-radius: $borde-redondeado;
+    box-shadow: $sombra;
+    @include transicion;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: $sombra-hover;
+    }
+}
+
+// Mixin para scrollbar
+@mixin scrollbar($ancho: 12px, $color-thumb: $color-scrollbar, $color-track: $color-scrollbar-track) {
+    &::-webkit-scrollbar {
+        height: $ancho;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-thumb;
+        border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $color-track;
+    }
+}

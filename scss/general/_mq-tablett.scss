@@ -1,0 +1,398 @@
+// Importar variables y mixin
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+
+@media (max-width: 1024px) {
+    /* Estilos para la pagina index */
+    .main-index {
+        @include grid(1fr, auto auto auto auto, 0); // Usando mixin para grid
+        padding: 15px;
+        margin-top: 60px;
+
+        .main-carrusel {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            height: auto;
+            padding: 15px;
+
+            .carrusel-titulo h2 {
+                font-size: 2.5rem;
+            }
+
+            .carrusel-container {
+                gap: 20px;
+                scroll-padding: 0 calc(50% - 250px);
+            }
+
+            .carrusel-item {
+                width: 500px;
+                height: 400px;
+                font-size: 4rem;
+            }
+        }
+
+        .main-nuevos-lanzamientos {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            width: 100%;
+            padding: 15px;
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .text h3 {
+                font-size: 1.3rem;
+            }
+
+            .text h4 {
+                font-size: 1rem;
+            }
+
+            img {
+                width: 100px;
+            }
+        }
+
+        .main-noticias-index {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+            padding: 15px;
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .carrusel-noticias {
+                gap: 15px;
+
+                .noticia img {
+                    max-width: 600px;
+                }
+
+                .noticia p {
+                    font-size: 1.3rem;
+                }
+
+                button {
+                    font-size: 1.5rem;
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+        }
+
+        .main-emociones {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+            padding: 15px;
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .emociones-grid {
+                @include grid(repeat(3, 1fr), auto, 10px); // Usando mixin para grid
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+
+    /* Estilos para la pagina de canciones */
+    .main-canciones {
+        @include grid(1fr, auto auto auto, 0); // Usando mixin para grid
+        padding: 100px;
+
+        .lista-canciones {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            padding: 15px;
+
+            input {
+                font-size: 14px;
+            }
+
+            .icono-busqueda {
+                font-size: 18px;
+            }
+
+            li {
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            img {
+                width: 120px;
+                height: 120px;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .info-cancion {
+                width: 100%;
+            }
+
+            .datos-principales {
+                h3 {
+                    font-size: 20px;
+                }
+
+                h4 {
+                    font-size: 14px;
+                }
+
+                .genero {
+                    font-size: 12px;
+                }
+            }
+
+            .informacion-adicional p {
+                font-size: 12px;
+            }
+        }
+
+        .mas-escuchados {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            padding: 20px;
+
+            h2 {
+                font-size: 24px;
+            }
+
+            li {
+                width: 100%;
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            img {
+                width: 80px;
+                height: 80px;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .info-cancion {
+                h3 {
+                    font-size: 18px;
+                }
+
+                h4 {
+                    font-size: 14px;
+                }
+
+                .genero {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .favoritos {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+            padding: 20px;
+
+            h2 {
+                font-size: 24px;
+            }
+
+            li {
+                width: 100%;
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            img {
+                width: 80px;
+                height: 80px;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .info-cancion {
+                h3 {
+                    font-size: 18px;
+                }
+
+                h4 {
+                    font-size: 14px;
+                }
+
+                .genero {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    /* Estilos para la pagina playlist */
+    .playlist-destacados {
+        margin-top: 60px;
+        padding: 15px;
+
+        .playlist-carrusel-titulo h2 {
+            font-size: 2.5rem;
+        }
+
+        .playlist-carrusel-container {
+            gap: 20px;
+            scroll-padding: 0 calc(50% - 250px);
+        }
+
+        .playlist-carrusel-item {
+            width: 500px;
+            height: 350px;
+            font-size: 4rem;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 8px 16px;
+        }
+    }
+
+    .lista-playlists-container {
+        @include grid(repeat(2, 1fr), auto, 10px); // Usando mixin para grid
+        max-width: 90%;
+    }
+
+    .lista-playlists-item {
+        height: 200px;
+        font-size: 1.1em;
+    }
+
+    .lista-playlists h2 {
+        font-size: 2rem;
+    }
+
+    /* Estilos para la pagina noticias */
+    .main-noticias {
+        @include grid(1fr, auto auto auto auto, 0); // Usando mixin para grid
+        padding: 15px;
+        margin-top: 60px;
+
+        .noticia {
+            padding: 15px;
+
+            .titular {
+                font-size: 2em;
+            }
+
+            .imagen-noticia {
+                width: 100%;
+            }
+
+            .descripcion {
+                font-size: 1em;
+            }
+        }
+
+        .eventos-festivales,
+        .tecnologia-musica,
+        .premios-reconocimientos {
+            padding: 15px;
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .evento,
+            .item-tecnologia,
+            .item-premio {
+                @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+            }
+
+            .fecha,
+            .imagen-tecnologia {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .icono-calendario {
+                font-size: 2em;
+            }
+
+            .mes {
+                font-size: 1em;
+            }
+
+            .numero-fecha {
+                font-size: 1.5em;
+            }
+
+            .nombre-evento,
+            .titulo-noticia {
+                font-size: 1.5em;
+            }
+
+            .artista,
+            .texto-noticia,
+            .descripcion-premio {
+                font-size: 1em;
+            }
+
+            .imagen-tecnologia {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    /* Estilos de la pagina contactanos */
+    .main-contacto {
+        padding: 30px 15px;
+        margin-top: 80px;
+
+        .contenedor-contacto {
+            @include flexbox(column, flex-start, stretch, nowrap); // Usando mixin para flexbox
+            gap: 20px;
+
+            .columna-izquierda,
+            .columna-derecha {
+                padding: 20px;
+            }
+
+            .columna-izquierda {
+                h1 {
+                    font-size: 2.5em;
+                }
+
+                .descripcion-contacto {
+                    font-size: 1em;
+                }
+
+                .icono-decorativo {
+                    font-size: 2em;
+                }
+            }
+
+            .formulario-contacto {
+                .grupo-formulario {
+                    @include flexbox(column, flex-start, flex-start, nowrap); // Usando mixin para flexbox
+
+                    .icono-formulario {
+                        margin-bottom: 10px;
+                    }
+
+                    input,
+                    textarea {
+                        width: 100%;
+                    }
+                }
+
+                .grupo-botones {
+                    @include flexbox(column, flex-start, stretch, nowrap); // Usando mixin para flexbox
+                    gap: 10px;
+
+                    .boton-enviar,
+                    .boton-reset {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

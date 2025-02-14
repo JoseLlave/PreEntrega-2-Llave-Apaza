@@ -1,0 +1,270 @@
+// Importar variables y mixin
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+.main-contacto {
+    background-color: $color-contacto; // Usando variable de color
+    color: white;
+    padding: 50px 20px;
+    margin-top: 100px;
+    font-family: $fuente-principal; // Usando variable de fuente
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 10%, transparent 10.01%);
+        background-size: 20px 20px;
+        opacity: 0.5;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .contenedor-contacto {
+        max-width: 1200px;
+        margin: 0 auto;
+        @include flexbox(row, space-between, stretch, nowrap); // Usando mixin para flexbox
+        gap: 40px;
+        position: relative;
+        z-index: 2;
+
+        .columna-izquierda {
+            flex: 1;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 140, 0, 0.05)), url('../img/fondocontactanos.avif');
+            background-size: cover;
+            background-position: center;
+            @include borde-redondeado(15px); // Usando mixin para bordes redondeados
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: flotar 5s infinite ease-in-out;
+            font-family: 'Poppins', sans-serif;
+            border: 2px solid transparent;
+            animation: borde-luminoso 3s infinite alternate;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+            }
+
+            .particulas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle, rgba(255, 140, 0, 0.2) 10%, transparent 10.01%);
+                background-size: 20px 20px;
+                animation: mover-particulas 10s linear infinite;
+                z-index: 2;
+            }
+
+            .contenido-izquierda {
+                position: relative;
+                z-index: 3;
+                text-align: center;
+
+                .icono-decorativo {
+                    font-size: 3em;
+                    color: $color-boton-enviar; // Usando variable de color
+                    margin-bottom: 20px;
+                    animation: latido 2s infinite ease-in-out;
+                }
+
+                h1 {
+                    font-size: 2.2em;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    background: linear-gradient(45deg, $color-boton-enviar, $color-boton-enviar-hover); // Usando variables de color
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: titulo-parpadeo 2s infinite alternate;
+                    font-weight: 600;
+                }
+
+                .descripcion-contacto {
+                    font-size: 1.2em;
+                    color: white;
+                    line-height: 1.6;
+                    opacity: 1;
+                    animation: aparecer 1.5s ease-in-out forwards;
+                    animation-delay: 0.5s;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .columna-derecha {
+            flex: 1;
+            padding: 40px;
+            background-color: $color-contacto; // Usando variable de color
+            @include borde-redondeado(15px); // Usando mixin para bordes redondeados
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: flotar 5s infinite ease-in-out;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(255, 140, 0, 0.05));
+                z-index: 1;
+            }
+
+            .formulario-contacto {
+                @include flexbox(column, flex-start, stretch, nowrap); // Usando mixin para flexbox
+                gap: 20px;
+                position: relative;
+                z-index: 2;
+
+                .grupo-formulario {
+                    @include flexbox(row, flex-start, center, nowrap); // Usando mixin para flexbox
+                    gap: 10px;
+                    position: relative;
+
+                    .icono-formulario {
+                        font-size: 1.5em;
+                        color: $color-boton-enviar; // Usando variable de color
+                        @include transicion(transform, 0.3s, ease); // Usando mixin para transiciones
+                    }
+
+                    &:hover .icono-formulario {
+                        transform: scale(1.1);
+                    }
+
+                    input,
+                    textarea {
+                        flex: 1;
+                        padding: 10px;
+                        font-size: 1em;
+                        border: 1px solid #444;
+                        @include borde-redondeado(5px); // Usando mixin para bordes redondeados
+                        background-color: $color-formulario; // Usando variable de color
+                        color: white;
+                        outline: none;
+                        @include transicion(border-color box-shadow, 0.3s, ease); // Usando mixin para transiciones
+
+                        &:focus {
+                            border-color: $color-boton-enviar; // Usando variable de color
+                            box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+                        }
+                    }
+
+                    textarea {
+                        resize: vertical;
+                    }
+                }
+
+                .grupo-botones {
+                    @include flexbox(row, flex-start, center, nowrap); // Usando mixin para flexbox
+                    gap: 10px;
+
+                    .boton-enviar,
+                    .boton-reset {
+                        padding: 10px 20px;
+                        font-size: 1em;
+                        border: none;
+                        @include borde-redondeado(5px); // Usando mixin para bordes redondeados
+                        cursor: pointer;
+                        @include transicion(background-color transform, 0.3s, ease); // Usando mixin para transiciones
+                        @include flexbox(row, center, center, nowrap); // Usando mixin para flexbox
+                        gap: 8px;
+                    }
+
+                    .boton-enviar {
+                        background-color: $color-boton-enviar; // Usando variable de color
+                        color: white;
+
+                        &:hover {
+                            background-color: $color-boton-enviar-hover; // Usando variable de color
+                            transform: translateY(-3px);
+                        }
+                    }
+
+                    .boton-reset {
+                        background-color: $color-boton-reset; // Usando variable de color
+                        color: white;
+
+                        &:hover {
+                            background-color: $color-boton-reset-hover; // Usando variable de color
+                            transform: translateY(-3px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes mover-particulas {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes borde-luminoso {
+    0% {
+        border-color: $color-boton-enviar; // Usando variable de color
+    }
+    100% {
+        border-color: $color-boton-enviar-hover; // Usando variable de color
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes titulo-parpadeo {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
