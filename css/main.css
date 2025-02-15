@@ -1334,6 +1334,34 @@ h2 {
     transform: translateY(0);
   }
 }
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+footer p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+footer p:nth-child(4) {
+  font-weight: bold;
+}
+footer::before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 768px) {
   /* Estilo para la pagina index */
   .main-index {
@@ -1634,6 +1662,384 @@ h2 {
   }
   .main-contacto .contenedor-contacto .columna-izquierda .icono-decorativo {
     font-size: 1.5em;
+  }
+  .main-contacto .contenedor-contacto .formulario-contacto .grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .main-contacto .contenedor-contacto .formulario-contacto .grupo-formulario .icono-formulario {
+    margin-bottom: 10px;
+  }
+  .main-contacto .contenedor-contacto .formulario-contacto .grupo-formulario input,
+  .main-contacto .contenedor-contacto .formulario-contacto .grupo-formulario textarea {
+    width: 100%;
+  }
+  .main-contacto .contenedor-contacto .formulario-contacto .grupo-botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .main-contacto .contenedor-contacto .formulario-contacto .grupo-botones .boton-enviar,
+  .main-contacto .contenedor-contacto .formulario-contacto .grupo-botones .boton-reset {
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  /* Estilos para la pagina index */
+  .main-index {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0;
+    padding: 15px;
+    margin-top: 60px;
+  }
+  .main-index .main-carrusel {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: auto;
+    padding: 15px;
+  }
+  .main-index .main-carrusel .carrusel-titulo h2 {
+    font-size: 2.5rem;
+  }
+  .main-index .main-carrusel .carrusel-container {
+    gap: 20px;
+    scroll-padding: 0 calc(50% - 250px);
+  }
+  .main-index .main-carrusel .carrusel-item {
+    width: 500px;
+    height: 400px;
+    font-size: 4rem;
+  }
+  .main-index .main-nuevos-lanzamientos {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    padding: 15px;
+  }
+  .main-index .main-nuevos-lanzamientos h2 {
+    font-size: 2rem;
+  }
+  .main-index .main-nuevos-lanzamientos .text h3 {
+    font-size: 1.3rem;
+  }
+  .main-index .main-nuevos-lanzamientos .text h4 {
+    font-size: 1rem;
+  }
+  .main-index .main-nuevos-lanzamientos img {
+    width: 100px;
+  }
+  .main-index .main-noticias-index {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding: 15px;
+  }
+  .main-index .main-noticias-index h2 {
+    font-size: 2rem;
+  }
+  .main-index .main-noticias-index .carrusel-noticias {
+    gap: 15px;
+  }
+  .main-index .main-noticias-index .carrusel-noticias .noticia img {
+    max-width: 600px;
+  }
+  .main-index .main-noticias-index .carrusel-noticias .noticia p {
+    font-size: 1.3rem;
+  }
+  .main-index .main-noticias-index .carrusel-noticias button {
+    font-size: 1.5rem;
+    height: 50px;
+    width: 50px;
+  }
+  .main-index .main-emociones {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    padding: 15px;
+  }
+  .main-index .main-emociones h2 {
+    font-size: 1.8rem;
+  }
+  .main-index .main-emociones .emociones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+  .main-index .main-emociones .emociones-grid img {
+    width: 80px;
+    height: 80px;
+  }
+  /* Estilos para la pagina de canciones */
+  .main-canciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0;
+    padding: 100px;
+  }
+  .main-canciones .lista-canciones {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 15px;
+  }
+  .main-canciones .lista-canciones input {
+    font-size: 14px;
+  }
+  .main-canciones .lista-canciones .icono-busqueda {
+    font-size: 18px;
+  }
+  .main-canciones .lista-canciones li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .main-canciones .lista-canciones img {
+    width: 120px;
+    height: 120px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .main-canciones .lista-canciones .info-cancion {
+    width: 100%;
+  }
+  .main-canciones .lista-canciones .datos-principales h3 {
+    font-size: 20px;
+  }
+  .main-canciones .lista-canciones .datos-principales h4 {
+    font-size: 14px;
+  }
+  .main-canciones .lista-canciones .datos-principales .genero {
+    font-size: 12px;
+  }
+  .main-canciones .lista-canciones .informacion-adicional p {
+    font-size: 12px;
+  }
+  .main-canciones .mas-escuchados {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding: 20px;
+  }
+  .main-canciones .mas-escuchados h2 {
+    font-size: 24px;
+  }
+  .main-canciones .mas-escuchados li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .main-canciones .mas-escuchados img {
+    width: 80px;
+    height: 80px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .main-canciones .mas-escuchados .info-cancion h3 {
+    font-size: 18px;
+  }
+  .main-canciones .mas-escuchados .info-cancion h4 {
+    font-size: 14px;
+  }
+  .main-canciones .mas-escuchados .info-cancion .genero {
+    font-size: 12px;
+  }
+  .main-canciones .favoritos {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding: 20px;
+  }
+  .main-canciones .favoritos h2 {
+    font-size: 24px;
+  }
+  .main-canciones .favoritos li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .main-canciones .favoritos img {
+    width: 80px;
+    height: 80px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .main-canciones .favoritos .info-cancion h3 {
+    font-size: 18px;
+  }
+  .main-canciones .favoritos .info-cancion h4 {
+    font-size: 14px;
+  }
+  .main-canciones .favoritos .info-cancion .genero {
+    font-size: 12px;
+  }
+  /* Estilos para la pagina playlist */
+  .playlist-destacados {
+    margin-top: 60px;
+    padding: 15px;
+  }
+  .playlist-destacados .playlist-carrusel-titulo h2 {
+    font-size: 2.5rem;
+  }
+  .playlist-destacados .playlist-carrusel-container {
+    gap: 20px;
+    scroll-padding: 0 calc(50% - 250px);
+  }
+  .playlist-destacados .playlist-carrusel-item {
+    width: 500px;
+    height: 350px;
+    font-size: 4rem;
+  }
+  .playlist-destacados button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+  .lista-playlists-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    max-width: 90%;
+  }
+  .lista-playlists-item {
+    height: 200px;
+    font-size: 1.1em;
+  }
+  .lista-playlists h2 {
+    font-size: 2rem;
+  }
+  /* Estilos para la pagina noticias */
+  .main-noticias {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0;
+    padding: 15px;
+    margin-top: 60px;
+  }
+  .main-noticias .noticia {
+    padding: 15px;
+  }
+  .main-noticias .noticia .titular {
+    font-size: 2em;
+  }
+  .main-noticias .noticia .imagen-noticia {
+    width: 100%;
+  }
+  .main-noticias .noticia .descripcion {
+    font-size: 1em;
+  }
+  .main-noticias .eventos-festivales,
+  .main-noticias .tecnologia-musica,
+  .main-noticias .premios-reconocimientos {
+    padding: 15px;
+  }
+  .main-noticias .eventos-festivales h2,
+  .main-noticias .tecnologia-musica h2,
+  .main-noticias .premios-reconocimientos h2 {
+    font-size: 2em;
+  }
+  .main-noticias .eventos-festivales .evento,
+  .main-noticias .eventos-festivales .item-tecnologia,
+  .main-noticias .eventos-festivales .item-premio,
+  .main-noticias .tecnologia-musica .evento,
+  .main-noticias .tecnologia-musica .item-tecnologia,
+  .main-noticias .tecnologia-musica .item-premio,
+  .main-noticias .premios-reconocimientos .evento,
+  .main-noticias .premios-reconocimientos .item-tecnologia,
+  .main-noticias .premios-reconocimientos .item-premio {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .main-noticias .eventos-festivales .fecha,
+  .main-noticias .eventos-festivales .imagen-tecnologia,
+  .main-noticias .tecnologia-musica .fecha,
+  .main-noticias .tecnologia-musica .imagen-tecnologia,
+  .main-noticias .premios-reconocimientos .fecha,
+  .main-noticias .premios-reconocimientos .imagen-tecnologia {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .main-noticias .eventos-festivales .icono-calendario,
+  .main-noticias .tecnologia-musica .icono-calendario,
+  .main-noticias .premios-reconocimientos .icono-calendario {
+    font-size: 2em;
+  }
+  .main-noticias .eventos-festivales .mes,
+  .main-noticias .tecnologia-musica .mes,
+  .main-noticias .premios-reconocimientos .mes {
+    font-size: 1em;
+  }
+  .main-noticias .eventos-festivales .numero-fecha,
+  .main-noticias .tecnologia-musica .numero-fecha,
+  .main-noticias .premios-reconocimientos .numero-fecha {
+    font-size: 1.5em;
+  }
+  .main-noticias .eventos-festivales .nombre-evento,
+  .main-noticias .eventos-festivales .titulo-noticia,
+  .main-noticias .tecnologia-musica .nombre-evento,
+  .main-noticias .tecnologia-musica .titulo-noticia,
+  .main-noticias .premios-reconocimientos .nombre-evento,
+  .main-noticias .premios-reconocimientos .titulo-noticia {
+    font-size: 1.5em;
+  }
+  .main-noticias .eventos-festivales .artista,
+  .main-noticias .eventos-festivales .texto-noticia,
+  .main-noticias .eventos-festivales .descripcion-premio,
+  .main-noticias .tecnologia-musica .artista,
+  .main-noticias .tecnologia-musica .texto-noticia,
+  .main-noticias .tecnologia-musica .descripcion-premio,
+  .main-noticias .premios-reconocimientos .artista,
+  .main-noticias .premios-reconocimientos .texto-noticia,
+  .main-noticias .premios-reconocimientos .descripcion-premio {
+    font-size: 1em;
+  }
+  .main-noticias .eventos-festivales .imagen-tecnologia,
+  .main-noticias .tecnologia-musica .imagen-tecnologia,
+  .main-noticias .premios-reconocimientos .imagen-tecnologia {
+    width: 100%;
+    height: auto;
+  }
+  /* Estilos de la pagina contactanos */
+  .main-contacto {
+    padding: 30px 15px;
+    margin-top: 80px;
+  }
+  .main-contacto .contenedor-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+  .main-contacto .contenedor-contacto .columna-izquierda,
+  .main-contacto .contenedor-contacto .columna-derecha {
+    padding: 20px;
+  }
+  .main-contacto .contenedor-contacto .columna-izquierda h1 {
+    font-size: 2.5em;
+  }
+  .main-contacto .contenedor-contacto .columna-izquierda .descripcion-contacto {
+    font-size: 1em;
+  }
+  .main-contacto .contenedor-contacto .columna-izquierda .icono-decorativo {
+    font-size: 2em;
   }
   .main-contacto .contenedor-contacto .formulario-contacto .grupo-formulario {
     display: flex;

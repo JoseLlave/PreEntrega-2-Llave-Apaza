@@ -10,5 +10,9 @@
 @import "general/noticias";
 //Import de pagina de contacto
 @import "general/contacto";
+//Import para el pie de pagina
+@import "general/pie-pagina.scss";
 //Imoprt de las paginas para version mobile
 @import "general/mq-mobile";
+//Imoprt de las paginas para version tablet
+@import "general/mq-tablet";

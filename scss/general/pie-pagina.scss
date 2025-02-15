@@ -1,0 +1,29 @@
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+
+footer {
+    background-color: $color-evento;
+    color: $color-borde;
+    padding: $espaciado-general;
+    text-align: center;
+    @include flexbox(column, center, center);
+    gap: $espaciado-pequeno;
+
+    p {
+        margin: 5px 0;
+        font-size: $tamano-texto;
+        
+        &:nth-child(4) {
+            font-weight: bold;
+        }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 2px;
+        background-color: $color-borde;
+        margin-bottom: $espaciado-pequeno;
+    }
+}
