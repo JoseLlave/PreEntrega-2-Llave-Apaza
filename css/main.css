@@ -1205,7 +1205,7 @@ h2 {
 .main-contacto .contenedor-contacto .columna-izquierda {
   flex: 1;
   padding: 40px;
-  background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 140, 0, 0.05)), url("../img/fondocontactanos.avif");
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 140, 0, 0.05)), url("https://i.ibb.co/1GcWBv9B/fondocontactanos.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 15px;
