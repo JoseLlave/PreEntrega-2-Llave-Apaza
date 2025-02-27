@@ -210,84 +210,170 @@ h2 {
             }
         }
 
-        /* Sección de nuevos lanzamientos */
         .main-nuevos-lanzamientos {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(145deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 100%);
+            border: 1px solid rgba(255,255,255,0.15);
             padding: $espaciado-general;
             color: $color-texto;
             font-family: $fuente-principal;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
             border-radius: $borde-redondeado;
-
+            position: relative;
+            overflow: hidden;
+            @include sombra(0 8px 32px rgba(0,0,0,0.45));
+            backdrop-filter: blur(12px);
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+                transition: $duracion-animacion * 2 $animacion-ease;
+            }
+            
+            &:hover::before {
+                left: 100%;
+            }
+        
             h2 {
                 font-size: $tamano-titulo;
-                font-weight: bold;
+                font-weight: 900;
                 text-align: left;
-                margin-bottom: $espaciado-pequeno;
+                margin: 0 0 $espaciado-pequeno 0;
                 color: #7ac995;
+                text-shadow: 0 0 15px rgba(122,201,149,0.4);
+                position: relative;
+                padding-bottom: 10px;
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 50px;
+                    height: 3px;
+                    background: linear-gradient(90deg, #7ac995, transparent);
+                }
             }
-
+        
             .info {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
+                @include flexbox(row, space-between, center);
+                padding: 15px;
+                border-radius: $borde-redondeado;
+                background: rgba(0,0,0,0.3);
+                @include transicion;
+                position: relative;
+                
+                &:hover {
+                    background: rgba(0,0,0,0.5);
+                    transform: translateX(10px);
+                    
+                    img {
+                        transform: rotate(2deg) scale(1.05);
+                        @include sombra(0 4px 20px rgba(122,201,149,0.3));
+                    }
+                }
+        
                 .text {
+                    flex: 1;
+                    padding-right: 20px;
+                    
                     h3 {
                         font-size: $tamano-subtitulo;
-                        font-weight: bold;
-                        text-align: left;
+                        font-weight: 700;
                         margin: 0;
+                        background: linear-gradient(45deg, #7ac995, $color-titulo);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
                     }
-
+        
                     h4 {
                         font-size: 1.2rem;
-                        font-weight: normal;
-                        margin: 5px 0 0;
-                        color: rgba(255, 255, 255, 0.7);
+                        font-weight: 300;
+                        margin: 8px 0 0;
+                        color: rgba(255,255,255,0.8);
+                        font-style: italic;
                     }
                 }
-
+        
                 img {
                     width: 120px;
-                    height: auto;
-                    border-radius: 8px;
+                    height: 120px;
+                    border-radius: 15px;
                     object-fit: cover;
+                    @include transicion;
+                    border: 2px solid rgba(122,201,149,0.3);
                 }
             }
-
+        
             video {
                 width: 100%;
                 border-radius: $borde-redondeado;
+                border: 2px solid rgba(255,255,255,0.1);
+                @include sombra(0 4px 15px rgba(0,0,0,0.3));
+                transition: transform $duracion-animacion $animacion-ease;
+                
+                &:hover {
+                    transform: scale(1.01);
+                }
             }
-
+        
             .lyrics {
                 font-style: italic;
-                font-size: $tamano-texto;
-                color: rgba(255, 255, 255, 0.7);
+                font-size: 1.1rem;
+                color: rgba(255,255,255,0.85);
                 text-align: center;
-                margin-top: $espaciado-pequeno;
+                margin: $espaciado-pequeno 0;
+                padding: 15px;
+                background: rgba(0,0,0,0.25);
+                border-radius: $borde-redondeado;
+                position: relative;
+                line-height: 1.6;
+                
+                &::before {
+                    content: '“';
+                    position: absolute;
+                    top: -15px;
+                    left: 10px;
+                    font-size: 4rem;
+                    color: rgba(122,201,149,0.3);
+                    font-family: $fuente-titulo;
+                }
             }
-
+        
             .ver-mas {
-                display: block;
-                text-align: center;
-                color: #1DB954;
-                font-size: $tamano-texto;
-                font-weight: bold;
-                text-decoration: none;
-                margin-top: 5px;
-
+                @include boton(rgba(122,201,149,0.15), #7ac995, 1px solid rgba(122,201,149,0.3));
+                width: fit-content;
+                margin: 10px auto 0;
+                border-radius: 50px;
+                position: relative;
+                overflow: hidden;
+                @include transicion;
+                
+                &::after {
+                    content: '→';
+                    margin-left: 8px;
+                    opacity: 0;
+                    @include transicion;
+                }
+                
                 &:hover {
-                    text-decoration: underline;
+                    padding-right: 25px;
+                    padding-left: 25px;
+                    background: rgba(122,201,149,0.25);
+                    
+                    &::after {
+                        opacity: 1;
+                        margin-left: 12px;
+                    }
                 }
             }
         }
